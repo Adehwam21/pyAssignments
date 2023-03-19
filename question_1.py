@@ -5,6 +5,8 @@ ITEMS = {
     "cards" : 4.0,
     "notepad" : 20.0
 }
+# created this dummy dictionary to map items to their prices for easy computation
+
 
 class ShoppingCart:
     def __init__(self) -> None:
@@ -25,8 +27,9 @@ class ShoppingCart:
     def getTotalPrice(self):
         products = [p for p in ITEMS.keys()]
         prices = []
+        # checks if item in shopping cart matches a product(key) in the dictionary, gets the products price(value) and append to the price list for summation
         for i in products:  
-            if i in self.items:
+            if i in self.items: 
                 prices.append(ITEMS.get(i))
             else:
                 continue
